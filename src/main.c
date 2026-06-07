@@ -1,10 +1,14 @@
 #include <stdio.h>
 
-void send_message(char* message) {
-    printf("%s\n", message);
+void send_message() {
+    printf("Hello, World!\n");
+}
+
+void run_callback(void (*callback)()) {
+    callback();
 }
 
 int main() {
-    send_message("The first line of code of my compiler :D");
+    run_callback(send_message);
     return 0;
 }
